@@ -1,31 +1,33 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import logo from "@/assets/images/logo.png";
-import ua from "@/assets/ua.svg";
-import phone from "@/assets/phone.svg";
-import arow from "@/assets/arow-down.svg";
-import favorite from "@/assets/favorite.svg";
-import bell from "@/assets/bell.svg";
-import profile from "@/assets/profile.svg";
-import cost from "@/assets/cost.svg";
+'use client';
+import { FC } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const Header = () => {
+import logo from '@/assets/images/logo.png';
+import Ua from '../../assets/svgs/ua.svg';
+import Phone from '../../assets/svgs/phone.svg';
+import Arow from '../../assets/svgs/arow-down.svg';
+import Favorite from '../../assets/svgs/favorite.svg';
+import Bell from '../../assets/svgs/bell.svg';
+import Profile from '../../assets/svgs/profile.svg';
+import Cost from '../../assets/svgs/cost.svg';
+
+const Header: FC = () => {
   return (
     <header className="pt-4">
       <div className="container">
         <nav className="flex items-center">
           <div className="flex items-center gap-3 mr-[70px]">
             <Link href="/">
-              <Image src={logo} alt="logo" />
+              <Image src={logo} alt="logo" priority width={220} height={48} />
             </Link>
             <button className="bg-gray-100 rounded-[10px] w-6 h-6">
-              <Image src={arow} alt="arow" />
+              <Arow />
             </button>
           </div>
           <ul className="flex gap-6">
             <li className="flex gap-1 py-5">
-              <Image src={ua} alt="ua" />
+              <Ua />
               Киев
               <button type="button">UA</button>
             </li>
@@ -43,7 +45,7 @@ const Header = () => {
             </li>
 
             <li className="flex gap-3 py-5">
-              <Image src={phone} alt="phone" />
+              <Phone />
               <a href="tel:+380000000000">+38 097 000 00 00</a>
             </li>
           </ul>
@@ -55,7 +57,7 @@ const Header = () => {
                   type="button"
                   className="flex items-center justify-center p-4 h-[56px] border rounded-lg"
                 >
-                  <Image src={bell} alt="bell" />
+                  <Bell />
                 </button>
               </li>
               <li>
@@ -63,7 +65,7 @@ const Header = () => {
                   type="button"
                   className="flex items-center justify-center p-4 h-[56px] border rounded-lg"
                 >
-                  <Image src={favorite} alt="favorite" />
+                  <Favorite />
                 </button>
               </li>
               <li>
@@ -71,16 +73,16 @@ const Header = () => {
                   type="button"
                   className="flex items-center justify-center p-4 h-[56px] border rounded-lg"
                 >
-                  <Image src={profile} alt="profile" />
+                  <Profile />
                 </button>
               </li>
               <li>
                 <button
                   type="button"
-                  className="flex items-center justify-center p-4 h-[56px] border rounded-lg"
+                  className="flex items-center justify-center gap-2 p-4 h-[56px] border rounded-lg"
                 >
                   Корзина
-                  <Image src={cost} alt="cost" />
+                  <Cost />
                 </button>
               </li>
             </ul>

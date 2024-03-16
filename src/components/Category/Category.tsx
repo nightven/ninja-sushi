@@ -18,7 +18,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
   };
 
   return (
-    <ul className="flex justify-center gap-2 font-['Inter'] text-base font-medium px-4 py-2 rounded-xl w-[51rem] bg-white mx-auto">
+    <ul className="flex justify-center gap-2 font-inter text-base font-medium px-4 py-2 rounded-xl w-[51rem] bg-bg mx-auto">
       <li
         className="flex flex-col items-center py-1.5 px-6"
         onClick={changeCategory}

@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
-
     "framer-motion": "^11.0.14",
     "bcrypt": "^5.1.1",
     "mongoose": "^8.2.2",
@@ -19,7 +18,7 @@
     "next-svgr": "^0.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
     "react-responsive": "^9.0.2"
   },
   "devDependencies": {

@@ -1,93 +1,29 @@
 'use client';
-import { FC } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { FC, useState } from 'react';
 
-import logo from '@/assets/images/logo.png';
-import Ua from '../../assets/svgs/ua.svg';
-import Phone from '../../assets/svgs/phone.svg';
-import Arow from '../../assets/svgs/arow-down.svg';
-import Favorite from '../../assets/svgs/favorite.svg';
-import Bell from '../../assets/svgs/bell.svg';
-import Profile from '../../assets/svgs/profile.svg';
-import Cost from '../../assets/svgs/cost.svg';
+import NavList from './NavList';
+
+import { useScreen } from '@/hooks/useScreen';
+import Logo from './Logo';
+import { usePathname } from 'next/navigation';
+import BurgerMenu from './BurgerMenu';
+import ToolsBar from './ToolsBar';
 
 const Header: FC = () => {
+  const pathname = usePathname();
+  const { isTablet, isDesktop, isMobile } = useScreen();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
-    <header className="pt-4">
-      <div className="container">
-        <nav className="flex items-center">
-          <div className="flex items-center gap-3 mr-[70px]">
-            <Link href="/">
-              <Image src={logo} alt="logo" priority width={220} height={48} />
-            </Link>
-            <button className="bg-gray-100 rounded-[10px] w-6 h-6">
-              <Arow />
-            </button>
-          </div>
-          <ul className="flex gap-6">
-            <li className="flex gap-1 py-5">
-              <Ua />
-              Киев
-              <button type="button">UA</button>
-            </li>
-            <li className="py-5">
-              <Link href="/home">Главная</Link>
-            </li>
-            <li className="py-5">
-              <Link href="/delivery">Доставка</Link>
-            </li>
-            <li className="py-5">
-              <Link href="/about">О нас</Link>
-            </li>
-            <li className="py-5">
-              <Link href="/news">Новости</Link>
-            </li>
-
-            <li className="flex gap-3 py-5">
-              <Phone />
-              <a href="tel:+380000000000">+38 097 000 00 00</a>
-            </li>
-          </ul>
-
-          <div className="ml-auto">
-            <ul className="flex items-center gap-3">
-              <li>
-                <button
-                  type="button"
-                  className="flex items-center justify-center p-4 h-[56px] border rounded-lg"
-                >
-                  <Bell />
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="flex items-center justify-center p-4 h-[56px] border rounded-lg"
-                >
-                  <Favorite />
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="flex items-center justify-center p-4 h-[56px] border rounded-lg"
-                >
-                  <Profile />
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  className="flex items-center justify-center gap-2 p-4 h-[56px] border rounded-lg"
-                >
-                  Корзина
-                  <Cost />
-                </button>
-              </li>
-            </ul>
-          </div>
-        </nav>
+    <header className="pt-4 ">
+      <div className="relative flex container bg-mainBgWhite rounded-xl">
+        <Logo isMobile={isMobile} />
+        <NavList pathname={pathname} />
+        <ToolsBar toggleMenu={toggleMenu} isDesktop={isDesktop} />
+        {isMenuOpen && !isDesktop && <BurgerMenu pathname={pathname} />}
       </div>
     </header>
   );

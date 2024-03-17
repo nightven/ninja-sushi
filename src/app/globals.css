@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 body {
+  background-color: #f5f5f7;
 }
 @layer components {
   .container {
     @apply mx-auto my-0  px-[16px] tablet:px-[24px] mobile:min-w-[320px] mobile:max-w-[767px] tablet:max-w-[768px] desktop:max-w-[1440px];
   }
   .active-link {
-    @apply text-teal-400;
+    @apply text-orange-600;
   }
 }

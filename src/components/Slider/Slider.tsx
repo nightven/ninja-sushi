@@ -36,7 +36,6 @@ const Slider = () => {
         clickPrev={clickPrev}
       />
       {images.map((pic, idx) => (
-        <>
           <div
             className={`${
               idx === activeImage
@@ -53,7 +52,6 @@ const Slider = () => {
               className="w-full h-[686px] object-cover rounded-r-3xl "
             />
           </div>
-        </>
       ))}
       <div className="absolute bottom-[30px] left-[800px]">
         <div className="flex items-baseline justify-center gap-2">

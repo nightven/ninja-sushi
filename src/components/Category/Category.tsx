@@ -18,19 +18,19 @@ const Category = ({ updateCategory }: CategoryProps) => {
   };
 
   return (
-    <div className="container">
-      <ul className="flex justify-center gap-2 font-inter text-base font-medium px-4 py-2 rounded-xl w-[280px] desktop:w-[51rem] bg-bg mx-auto tablet:w-[720px]">
+    <div className="container ">
+      <ul className="font-inter text-base font-medium px-4 py-2 mt-4 bg-bg mx-auto carousel carousel-center rounded-box space-x-2 w-[320px] tablet:w-[768px] desktop:flex desktop:w-[800px] desktop:mx-auto desktop:space-x-0 desktop:rounded-none">
         <li
-          className="flex flex-col items-center py-1.5 px-6 "
+          className="flex flex-col items-center py-1.5 px-6 carousel-item bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
-          <button className=" focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
+          <button className=" focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600 ">
             <Roll />
             <span>Роллы</span>
           </button>
         </li>
         <li
-          className="flex flex-col items-center py-1.5 px-6 "
+          className="flex flex-col items-center py-1.5 px-6 carousel-item  bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
           <button className=" focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
@@ -39,7 +39,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           </button>
         </li>
         <li
-          className="flex flex-col items-center py-1.5 px-6"
+          className="flex flex-col items-center py-1.5 px-6 carousel-item  bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
           <button className=" focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
@@ -48,7 +48,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           </button>
         </li>
         <li
-          className="flex flex-col items-center py-1.5 px-6"
+          className="flex flex-col items-center py-1.5 px-6 carousel-item bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
           <button className=" focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
@@ -57,7 +57,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           </button>
         </li>
         <li
-          className="flex flex-col items-center py-1.5 px-6"
+          className="flex flex-col items-center py-1.5 px-6 carousel-item  bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
           <button className=" focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
@@ -66,7 +66,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           </button>
         </li>
         <li
-          className="flex flex-col items-center py-1.5 px-6"
+          className="flex flex-col items-center py-1.5 px-6 carousel-item bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
           <button className=" focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
@@ -74,14 +74,14 @@ const Category = ({ updateCategory }: CategoryProps) => {
             <span>Соусы</span>
           </button>
         </li>
-        {/* <li className="flex flex-col items-center py-1.5 px-6 text-[#9E9E9E]">
+        <li className="flex flex-col items-center py-1.5 px-6 text-[#9E9E9E] carousel-item bg-white rounded-box desktop:rounded-none">
           <Unknown />
           <span>Неизв</span>
         </li>
-        <li className="flex flex-col items-center py-1.5 px-6 text-[#9E9E9E]">
+        <li className="flex flex-col items-center py-1.5 px-6 text-[#9E9E9E] carousel-item  bg-white rounded-box desktop:rounded-none">
           <Unknown />
           <span>Неизв</span>
-        </li> */}
+        </li>
       </ul>
     </div>
   );

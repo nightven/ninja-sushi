@@ -20,7 +20,7 @@ export const images = [
     },
      {
         id: 3,
-        src: hero3,
+        src: hero1,
         title: "Ninja Sushi в Киеве! Пока только на Правом берегу",
         desc: "Доставку делаем с 12:00 до 21:00"
     },

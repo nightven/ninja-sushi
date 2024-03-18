@@ -29,17 +29,13 @@ const Slider = () => {
   }, [activeImage]);
 
   return (
-    <div className="relative w-full h-[686px] flex place-self-center justify-center items-center transition-transform ease-in-out duration-500">
-      <Description
-        activeImgIndex={activeImage}
-        clickNext={clickNext}
-        clickPrev={clickPrev}
-      />
-      {images.map((pic, idx) => (
+    <div className=" container relative h-[288px] w-[288px] mx-auto transition-transform ease-in-out duration-500 tablet:flex tablet:w-[760px]">
+      <div className="flex flex-row">
+        {images.map((pic, idx) => (
           <div
             className={`${
               idx === activeImage
-                ? 'block w-full object-cover transition-all duration-500 ease-in-out'
+                ? 'flex object-cover transition-all duration-500 ease-in-out tablet:order-last'
                 : 'hidden'
             }`}
             key={idx}
@@ -47,13 +43,18 @@ const Slider = () => {
             <Image
               src={pic.src}
               alt=""
-              width={870}
-              height={686}
-              className="w-full h-[686px] object-cover rounded-r-3xl "
+              className="w-[288px] h-[288px] object-cover rounded-3xl tablet:w-[360px] tablet:h-[360px] "
             />
           </div>
-      ))}
-      <div className="absolute bottom-[30px] left-[800px]">
+        ))}
+      </div>
+      <Description
+        activeImgIndex={activeImage}
+        clickNext={clickNext}
+        clickPrev={clickPrev}
+      />
+
+      {/* <div className="absolute bottom-[30px] left-[800px]">
         <div className="flex items-baseline justify-center gap-2">
           {images.map((_, i) => (
             <div
@@ -62,7 +63,7 @@ const Slider = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

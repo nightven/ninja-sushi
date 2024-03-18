@@ -11,7 +11,7 @@ type Props = {
 };
 const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
   return (
-    <div className="w-full  bg-bg rounded-l-3xl pt-[118px] pl-[94px] pr-[60px] order-last h-[686px]">
+    <div className="bg-white rounded-b-3xl py-2 px-2 w-[288px] h-[288px] tablet:w-[360px] tablet:h-[360px] tablet:order-first">
       {images.map((elem, idx) => (
         <div
           className={`${
@@ -37,17 +37,15 @@ const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
             }}
             className="w-full"
           >
-            <h1 className="font-inter leading-tight text-[64px] font-bold mb-4 h-[350px]">
+            <h1 className="font-inter leading-tight text-[32px] font-bold mb-4 h-[160px]">
               {elem.title}
             </h1>
-            <p className="font-normal leading-7 text-xl text-[#686870]">
-              {elem.desc}
-            </p>
+            <p className="text-base font-normal text-[#686870]">{elem.desc}</p>
           </motion.div>
-          <button className="bg-[#00CC2D] text-white px-20 py-4 rounded-xl mt-6">
+          <button className="bg-[#00CC2D] text-white text-base font-meduim px-18 py-4 rounded-xl mt-4 w-full">
             Перейти к новости
           </button>
-          <div className="absolute bottom-1 w-full flex justify-center items-center">
+          {/* <div className="absolute bottom-1 w-full flex justify-center items-center">
             <div
               onClick={clickPrev}
               className="absolute cursor-pointer top-[-350px] left-[670px]"
@@ -60,7 +58,7 @@ const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
             >
               <GrNext className="stroke-orange-600" />
             </div>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>

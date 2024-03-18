@@ -13,14 +13,10 @@ export default function Home() {
   return (
     <main>
       <section className="bg-[#F5F5F7]">
-        <div className="container pt-4">
-          <Category updateCategory={updateCategory} />
-        </div>
+        <Category updateCategory={updateCategory} />
       </section>
       <section className="bg-[#F5F5F7]">
-        <div className="container pt-12">
-          <Slider />
-        </div>
+        <Slider />
       </section>
     </main>
   );

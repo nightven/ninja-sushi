@@ -29,17 +29,13 @@ const Slider = () => {
   }, [activeImage]);
 
   return (
-    <div className="relative w-full h-[686px] flex place-self-center justify-center items-center transition-transform ease-in-out duration-500">
-      <Description
-        activeImgIndex={activeImage}
-        clickNext={clickNext}
-        clickPrev={clickPrev}
-      />
-      {images.map((pic, idx) => (
+    <div className=" container relative w-[288px] mx-auto mt-4 transition-transform ease-in-out duration-500 tablet:flex tablet:w-[760px] desktop:w-[1440px]">
+      <div className="flex flex-row">
+        {images.map((pic, idx) => (
           <div
             className={`${
               idx === activeImage
-                ? 'block w-full object-cover transition-all duration-500 ease-in-out'
+                ? 'flex object-cover transition-all duration-500 ease-in-out tablet:order-last'
                 : 'hidden'
             }`}
             key={idx}
@@ -47,18 +43,23 @@ const Slider = () => {
             <Image
               src={pic.src}
               alt=""
-              width={870}
-              height={686}
-              className="w-full h-[686px] object-cover rounded-r-3xl "
+              className="w-[288px] h-[288px] object-cover rounded-3xl tablet:w-[360px] tablet:h-[360px] tablet:rounded-none tablet:rounded-r-3xl desktop:w-[696px] desktop:h-[686px] "
             />
           </div>
-      ))}
-      <div className="absolute bottom-[30px] left-[800px]">
+        ))}
+      </div>
+      <Description
+        activeImgIndex={activeImage}
+        clickNext={clickNext}
+        clickPrev={clickPrev}
+      />
+
+      <div className="absolute top-[260px] left-[50px] tablet:top-[330px] tablet:left-[400px] desktop:top-[650px] desktop:left-[750px]">
         <div className="flex items-baseline justify-center gap-2">
           {images.map((_, i) => (
             <div
               key={i}
-              className={`transition-all w-3 h-3 bg-bg rounded-full ${activeImage === i ? 'bg-orange-600' : 'bg-bg'}`}
+              className={`transition-all w-3 h-3 rounded-full ${activeImage === i ? 'bg-orange-600' : 'bg-bgGray'}`}
             />
           ))}
         </div>

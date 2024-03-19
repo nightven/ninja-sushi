@@ -1,24 +1,18 @@
 import mongoose, { Schema } from 'mongoose';
 
 const productSchema = new Schema({
-  localizedTitle: {
-    type: Array,
+  title: {
+    type: String,
     min: 3,
     required: true,
   },
   image: {
     type: String,
-  },
-  description: {
-    type: Array,
     required: true,
   },
   category: {
     type: Number,
     required: true,
-  },
-  popularity: {
-    type: Number,
   },
   price: {
     type: Number,
@@ -35,6 +29,9 @@ const productSchema = new Schema({
     type: Boolean,
   },
   lactose: {
+    type: Boolean,
+  },
+  spicy: {
     type: Boolean,
   },
   ingredients: {

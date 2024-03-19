@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-async function dbConnect() {
+export async function dbConnect() {
   try {
     const host = process.env.DB_HOST;
     if (!host) {
@@ -14,4 +14,3 @@ async function dbConnect() {
   }
 }
 
-export default dbConnect;

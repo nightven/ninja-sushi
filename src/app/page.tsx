@@ -1,5 +1,6 @@
 'use client';
 import Category from '@/components/Category/Category';
+import ClientSideProduct from '@/components/Products/ClientSideProduct';
 import Products from '@/components/Products/Products';
 import Slider from '@/components/Slider/Slider';
 
@@ -20,7 +21,9 @@ export default function Home() {
         <Slider />
       </section>
       <section className="bg-[#F5F5F7]">
-        <Products />
+        <ClientSideProduct>
+          <Products />
+        </ClientSideProduct>
       </section>
     </main>
   );

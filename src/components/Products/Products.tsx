@@ -10,7 +10,11 @@ export interface PageProps {
 }
 
 export default async function Products() {
-  const products = await getProducts({ category: 1, limit: 4, page: 1 });
+  const products = await getProducts({
+    category: 1,
+    limit: 20,
+    page: 1,
+  });
   return (
     <ul>
       {products?.map((p: PageProps) => (

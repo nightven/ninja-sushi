@@ -12,7 +12,7 @@ export default async function Products() {
   const products = await getProducts();
   return (
     <ul>
-      {products.map((p: PageProps) => (
+      {products?.map((p: PageProps) => (
         <li key={p._id}>
           <h2>{p.title}</h2>
           <Image width={40} height={40} src={p.image} alt="product" />

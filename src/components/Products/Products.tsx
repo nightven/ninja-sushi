@@ -2,14 +2,19 @@ import { getProducts } from '@/lib/routes/products';
 import Image from 'next/image';
 import React from 'react';
 
-interface PageProps {
+export interface PageProps {
   _id: string;
   title: string;
   image: string;
+  category: number;
 }
 
 export default async function Products() {
-  const products = await getProducts();
+  const products = await getProducts({
+    category: 1,
+    limit: 20,
+    page: 1,
+  });
   return (
     <ul>
       {products?.map((p: PageProps) => (

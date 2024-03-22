@@ -7,7 +7,6 @@ export const GET = async (request: NextApiRequest) => {
   try {
     dbConnect();
     const products = await Product.find();    
-    console.log(products);
     return NextResponse.json(products);
 
   } catch (error) {

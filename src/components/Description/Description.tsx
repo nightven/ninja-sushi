@@ -5,13 +5,13 @@ import { GrPrevious } from 'react-icons/gr';
 import { motion } from 'framer-motion';
 
 type Props = {
-  clickNext: any;
-  clickPrev: any;
+  clickNext: () => void;
+  clickPrev: () => void;
   activeImgIndex: number;
 };
 const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
   return (
-    <div className="bg-white rounded-b-3xl py-2 px-2 w-[288px] h-[288px] tablet:flex tablet:w-[360px] tablet:h-[360px] tablet:order-first tablet:py-8 tablet:px-8 tablet:rounded-none tablet:rounded-l-3xl desktop:w-[696px] desktop:h-[686px] desktop:py-12 desktop:px-12">
+    <div className="bg-white rounded-b-3xl py-2 px-2 min-w-[288px] h-[288px] tablet:flex tablet:min-w-[360px] tablet:h-[360px] tablet:order-first tablet:py-8 tablet:px-8 tablet:rounded-none tablet:rounded-l-3xl desktop:w-[696px] desktop:h-[686px] desktop:py-12 desktop:px-12">
       {images.map((elem, idx) => (
         <div
           className={`${

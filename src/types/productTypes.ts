@@ -10,5 +10,5 @@ export interface Products {
   hit: boolean;
   lactose: boolean;
   spicy: boolean;
-  ingredients: string[];
+  ingredients: { title: string; image: string; }[],
 }

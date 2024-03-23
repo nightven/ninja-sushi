@@ -12,7 +12,7 @@ const ProductItem: FC<ProductItemProps> = ({ products }) => {
   const { title, image, price, weight, ingredients, hit } = products;
 
   return (
-    <div className="relative card card-side items-center bg-base-100 shadow-xl p-3 min-w-[288px] w-full mx-auto desktop:flex-col">
+    <div className="relative card card-side bg-base-100 shadow-xl p-3 min-w-[288px]  w-full mx-auto desktop:flex-col desktop:h-[590px]">
       <Image
         src={image}
         alt={title}
@@ -20,16 +20,19 @@ const ProductItem: FC<ProductItemProps> = ({ products }) => {
         height={96}
         className="desktop:w-[330px] desktop:h-[290px]"
       />
-      <div className="card-body p-2">
+      <div className="flex flex-col justify-between  p-2">
         <h2 className="card-title text-base font-bold mb-1.5">{title}</h2>
         <p className="text-orange-600 text-xs desktop:text-lg">
           Вес: {weight} г
         </p>
-        <u className="text-xs no-underline text-[#686870] desktop:text-base">
-          {ingredients?.map((ingredient, idx) => (
-            <li key={idx}>{ingredient}</li>
-          ))}
-        </u>
+        <ul className="flex justify-start content-start gap-1 flex-wrap text-xs no-underline text-[#686870] desktop:text-base">
+          {ingredients
+            ?.slice(0, 5)
+            .map((ingredient, idx) => (
+              <li key={idx}>{ingredient.title.toLowerCase()},</li>
+            ))}
+        </ul>
+
         <div className="card-actions justify-between items-center">
           <div className="text-base font-bold desktop:text-[26px]">
             {price} <span className="text-[#686870]">грн</span>

@@ -5,7 +5,11 @@ import ProductItem from './ProductItem';
 import { Products } from '@/types/productTypes';
 
 const ProductList: FC = async () => {
-  const products = await getProducts();
+  const products = await getProducts({
+    category: 2,
+    limit: 20,
+    page: 1,
+  });
   return (
     <div className="container">
       <ul className="flex flex-col gap-3 tablet:grid tablet:grid-cols-2 desktop:grid-cols-4 desktop:gap-5 w-full">

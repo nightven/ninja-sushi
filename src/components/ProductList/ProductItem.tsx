@@ -12,27 +12,28 @@ const ProductItem: FC<ProductItemProps> = ({ products }) => {
   const { title, image, price, weight, ingredients, hit } = products;
 
   return (
-    <div className="relative card card-side bg-base-100 shadow-xl p-3 min-w-[288px]  w-full mx-auto desktop:flex-col desktop:h-[590px]">
+    <div className="relative card card-side items-center bg-base-100 shadow-xl p-3 min-w-[288px] h-[250px] w-full mx-auto desktop:flex-col desktop:h-[590px]">
       <Image
         src={image}
         alt={title}
         width={96}
         height={96}
-        className="desktop:w-[330px] desktop:h-[290px]"
+        className="desktop:w-[330px]"
       />
-      <div className="flex flex-col justify-between  p-2">
-        <h2 className="card-title text-base font-bold mb-1.5">{title}</h2>
-        <p className="text-orange-600 text-xs desktop:text-lg">
-          Вес: {weight} г
-        </p>
-        <ul className="flex justify-start content-start gap-1 flex-wrap text-xs no-underline text-[#686870] desktop:text-base">
-          {ingredients
-            ?.slice(0, 5)
-            .map((ingredient, idx) => (
-              <li key={idx}>{ingredient.title.toLowerCase()},</li>
-            ))}
-        </ul>
-
+      <div className="flex flex-col">
+        <div className="flex flex-col justify-between  p-2">
+          <h2 className="card-title text-base font-bold mb-1.5">{title}</h2>
+          <p className="text-orange-600 text-xs desktop:text-lg">
+            Вес: {weight} г
+          </p>
+          <ul className="flex justify-start content-start gap-1 flex-wrap text-xs no-underline text-[#686870] desktop:text-base">
+            {ingredients
+              ?.slice(0, 5)
+              .map((ingredient, idx) => (
+                <li key={idx}>{ingredient.title.toLowerCase()},</li>
+              ))}
+          </ul>
+        </div>
         <div className="card-actions justify-between items-center">
           <div className="text-base font-bold desktop:text-[26px]">
             {price} <span className="text-[#686870]">грн</span>
@@ -43,6 +44,7 @@ const ProductItem: FC<ProductItemProps> = ({ products }) => {
           </div>
         </div>
       </div>
+
       <div className="absolute top-[0] left-[0] flex gap-1">
         {hit && (
           <span className="bg-[#FBDCD5] rounded-md text-orange-600 px-2 py-0.5">

@@ -1,19 +1,27 @@
 import mongoose, { Schema } from 'mongoose';
 
 const newsSchema = new Schema({
-  localizedTitle: {
-    type: Array,
+  poster: {
+    type: String,
+    required: true,
+  },
+  topic: {
+    type: String,
     required: true,
   },
   image: {
-    type: Array,
+    type: String,
+  },
+  title: {
+    type: String,
+    required: true,
   },
   description: {
-    type: Array,
+    type: String,
   },
-  date:{
-    type: Date
-  }
+  date: {
+    type: String,
+  },
 });
 
-export const News = mongoose.models?.News || mongoose.model('news', newsSchema);
+export const News = mongoose.models?.News || mongoose.model('News', newsSchema);

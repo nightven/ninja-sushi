@@ -21,9 +21,9 @@ export default function Home() {
         <Slider />
       </section>
       <section className="bg-[#F5F5F7]">
-        <ClientSideProduct>
+        {/* <ClientSideProduct>
           <Products />
-        </ClientSideProduct>
+        </ClientSideProduct> */}
       </section>
     </main>
   );

@@ -1,7 +1,7 @@
 export const NAV_LIST = [
   {
     href: '/',
-    title: 'Главная',
+    title: 'Головна',
   },
   {
     href: '/delivery',
@@ -9,10 +9,10 @@ export const NAV_LIST = [
   },
   {
     href: '/about',
-    title: 'О нас',
+    title: 'Про нас',
   },
   {
     href: '/news',
-    title: 'Новости',
+    title: 'Новини',
   },
 ];

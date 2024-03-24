@@ -1,66 +1,49 @@
-import React, { FC } from 'react';
-import Favorite from '../../assets/svgs/header/favorite.svg';
-import Bell from '../../assets/svgs/header/bell.svg';
-import Profile from '../../assets/svgs/header/profile.svg';
-import Cost from '../../assets/svgs/header/cost.svg';
-import Burger from '../../assets/svgs/header/burger.svg';
+import React, { FC, useRef, useState } from 'react';
+
+import { useOutsideClick } from '@/hooks/useOutsideClick';
+import BurgerMenu from './BurgerMenu';
+import ToolsBarItem from './ToolsBarItem';
+import Cost from './Cost';
 
 interface Props {
   isDesktop: boolean;
-  toggleMenu: () => void;
 }
 
-const ToolsBar: FC<Props> = ({ toggleMenu, isDesktop }) => {
-  return (
-    <ul className="flex items-center gap-1 tablet:gap-3 ml-auto">
-      <li className="relative">
-        <button
-          type="button"
-          className=" flex items-center justify-center p-[8px] tablet:p-4  border border-border rounded-xl"
-        >
-          <Bell />
-        </button>
-        <div className="absolute top-[-8px] right-[-4px] flex items-center justify-center w-[20px] h-[20px] tablet:w-[24px] tablet:h-[24px]  text-[10px] tablet:text-[14px] font-[500] text-white   rounded-full bg-orange-500">
-          10
-        </div>
-      </li>
-      <li>
-        <button
-          type="button"
-          className="flex items-center justify-center p-[8px] tablet:p-4  border border-border rounded-xl"
-        >
-          <Favorite />
-        </button>
-      </li>
-      <li>
-        <button
-          type="button"
-          className="flex items-center justify-center p-[8px] tablet:p-4 border border-border rounded-xl"
-        >
-          <Profile />
-        </button>
-      </li>
+const ToolsBar: FC<Props> = ({ isDesktop }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCostOpen, setIsCostOpen] = useState(false);
+  const menuRef = useRef(null);
 
-      <li>
-        {isDesktop ? (
-          <button
-            type="button"
-            className="flex items-center justify-center gap-2 p-[8px] tablet:p-4  border border-border rounded-xl"
-          >
-            Корзина
-            <Cost />
-          </button>
-        ) : (
-          <button
-            type="button"
-            onClick={toggleMenu}
-            className="flex items-center justify-center p-[12px] tablet:p-[18px] bg-bgGray hover:bg-gray-300 rounded-xl"
-          >
-            <Burger />
-          </button>
-        )}
-      </li>
-    </ul>
+  useOutsideClick(menuRef, () => {
+    if (isMenuOpen) {
+      setTimeout(() => setIsMenuOpen(false), 100);
+    }
+    if (isCostOpen) {
+      setTimeout(() => setIsCostOpen(false), 100);
+    }
+  });
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const toggleCost = () => {
+    setIsCostOpen(!isCostOpen);
+  };
+  return (
+    <>
+      <ul className="flex items-center gap-1 tablet:gap-3 ml-auto">
+        <ToolsBarItem
+          isDesktop={isDesktop}
+          toggleMenu={toggleMenu}
+          toggleCost={toggleCost}
+        />
+      </ul>
+      <div ref={menuRef}>
+        {isMenuOpen && !isDesktop && <BurgerMenu />}
+
+        {isCostOpen && <Cost />}
+      </div>
+    </>
   );
 };
 

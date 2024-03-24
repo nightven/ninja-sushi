@@ -7,7 +7,7 @@ export const GET = async (request: NextApiRequest, { params }: any) => {
   const { slug } = params;
   try {
     dbConnect();
-    const news = await News.findOne({ _id: slug });
+    const news = await News.findOne({ slug });
     return NextResponse.json(news);
   } catch (error) {
     console.log(error);

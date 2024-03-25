@@ -9,9 +9,6 @@ const newsSchema = new Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-  },
   title: {
     type: String,
     required: true,
@@ -21,6 +18,10 @@ const newsSchema = new Schema({
   },
   date: {
     type: String,
+  },
+  slug: {
+    type: String,
+    required: true,
   },
 });
 

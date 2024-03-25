@@ -33,8 +33,8 @@ const ProductGroup: FC<ProductItemProps> = ({ products, category, title }) => {
       </div>
       <ul className="flex flex-col gap-3 mb-4 tablet:grid tablet:grid-cols-2 desktop:grid-cols-4 desktop:gap-5 w-full">
         {filteredArr.map((product: Products) => (
-          <Link href="">
-            <li key={product._id}>
+          <Link href="" key={product._id}>
+            <li>
               <ProductItem key={product._id} products={product} />
             </li>
           </Link>

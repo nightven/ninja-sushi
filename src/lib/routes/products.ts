@@ -1,4 +1,4 @@
-export const getProducts = async ({}: {}) => {
+export const getProducts = async () => {
   try {
     const res = await fetch(`http://localhost:3000/api/products`, {
       next: { revalidate: 3600 },

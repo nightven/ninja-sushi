@@ -45,16 +45,16 @@ const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
           <button className="bg-[#00CC2D] text-white text-base font-meduim px-18 py-4 rounded-xl mt-4 w-full tablet:w-full desktop:w-[300px]">
             Перейти к новости
           </button>
-          <div className="absolute bottom-1 w-full flex justify-center items-center">
+          <div className="relative">
             <div
               onClick={clickPrev}
-              className="absolute cursor-pointer top-[-450px] left-[0] tablet:top-[-200px] tablet:left-[330px] desktop:top-[-350px] desktop:left-[680px]"
+              className="absolute cursor-pointer top-[-550px] left-[200px] tablet:top-[-200px] tablet:left-[330px] desktop:top-[-350px] desktop:left-[680px]"
             >
               <GrPrevious className="stroke-orange-600" />
             </div>
             <div
               onClick={clickNext}
-              className="absolute cursor-pointer top-[-450px] left-[250px] tablet:top-[-200px] tablet:left-[650px] desktop:top-[-350px] desktop:left-[1300px]"
+              className="absolute cursor-pointer top-[-550px] left-[250px] tablet:top-[-200px] tablet:left-[660px] desktop:top-[-350px] desktop:left-[1300px]"
             >
               <GrNext className="stroke-orange-600" />
             </div>

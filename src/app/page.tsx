@@ -33,9 +33,7 @@ export default function Home() {
         <Slider />
       </section>
       <section className="bg-[#F5F5F7] pt-12">
-        <ClientSideProduct>
-          <ProductList products={products} />
-        </ClientSideProduct>
+        <ProductList products={products} />
       </section>
     </main>
   );

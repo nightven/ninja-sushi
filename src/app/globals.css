@@ -9,7 +9,6 @@ body {
 @layer components {
   .container {
     @apply mx-auto my-0  px-[16px] tablet:px-[24px] mobile:min-w-[320px] mobile:max-w-[767px] tablet:max-w-[768px] desktop:max-w-[1488px];
-    overflow-x: hidden;
   }
   .active-link {
     @apply text-orange-600;

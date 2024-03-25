@@ -3,6 +3,7 @@ import { Products } from '@/types/productTypes';
 import React, { FC } from 'react';
 import ProductItem from './ProductItem';
 import { useMediaQuery } from 'react-responsive';
+import Link from 'next/link';
 
 interface ProductItemProps {
   products: Products[];
@@ -32,9 +33,11 @@ const ProductGroup: FC<ProductItemProps> = ({ products, category, title }) => {
       </div>
       <ul className="flex flex-col gap-3 mb-4 tablet:grid tablet:grid-cols-2 desktop:grid-cols-4 desktop:gap-5 w-full">
         {filteredArr.map((product: Products) => (
-          <li key={product._id}>
-            <ProductItem key={product._id} products={product} />
-          </li>
+          <Link href="">
+            <li key={product._id}>
+              <ProductItem key={product._id} products={product} />
+            </li>
+          </Link>
         ))}
       </ul>
       <button className="flex w-full mx-auto justify-center mb-12 py-4 rounded-xl text-base font-medium text-[#00CC2D] bg-white desktop:hidden">

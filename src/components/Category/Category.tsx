@@ -19,7 +19,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
 
   return (
     <div className="container ">
-      <ul className="font-inter text-base font-medium px-4 py-2 mt-4 bg-bg mx-auto carousel carousel-start w-full rounded-box space-x-2 desktop:flex desktop:w-[800px] desktop:mx-auto desktop:space-x-0">
+      <ul className="font-inter text-base font-medium px-4 py-2 bg-bg mx-auto carousel carousel-start w-full rounded-box space-x-2 desktop:flex desktop:w-[800px] desktop:mx-auto desktop:space-x-0">
         <li
           className="py-1.5 px-6 carousel-item bg-white rounded-box desktop:rounded-none desktop:rounded-l-2xl"
           onClick={changeCategory}

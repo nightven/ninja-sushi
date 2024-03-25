@@ -24,7 +24,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           className="py-1.5 px-6 carousel-item bg-white rounded-box desktop:rounded-none desktop:rounded-l-2xl"
           onClick={changeCategory}
         >
-          <button className="flex flex-col items-center focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600 ">
+          <button className="flex flex-col items-center fill-[#86868B]  focus:text-orange-600 focus:fill-orange-600 hover:text-orange-600  hover:fill-orange-600 ">
             <Roll />
             <span>Роллы</span>
           </button>
@@ -33,7 +33,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           className="py-1.5 px-6 carousel-item  bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
-          <button className="flex flex-col items-center focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
+          <button className="flex flex-col items-center fill-[#86868B]  focus:text-orange-600 focus:fill-orange-600 hover:text-orange-600  hover:fill-orange-600">
             <Sushi />
             <span>Суши</span>
           </button>
@@ -42,7 +42,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           className="py-1.5 px-6 carousel-item  bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
-          <button className="flex flex-col items-center focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
+          <button className="flex flex-col items-center fill-[#86868B]  focus:text-orange-600 focus:fill-orange-600 hover:text-orange-600  hover:fill-orange-600 ">
             <Set />
             <span>Сеты</span>
           </button>
@@ -51,7 +51,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           className="py-1.5 px-6 carousel-item bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
-          <button className="flex flex-col items-center focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
+          <button className="flex flex-col items-center fill-[#86868B]  focus:text-orange-600 focus:fill-orange-600 hover:text-orange-600  hover:fill-orange-600">
             <Bowl />
             <span>Боулы</span>
           </button>
@@ -60,7 +60,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           className=" py-1.5 px-6 carousel-item  bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
-          <button className="flex flex-col items-center focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
+          <button className="flex flex-col items-center fill-[#86868B]  focus:text-orange-600 focus:fill-orange-600 hover:text-orange-600  hover:fill-orange-600">
             <Drink />
             <span>Напитки</span>
           </button>
@@ -69,7 +69,7 @@ const Category = ({ updateCategory }: CategoryProps) => {
           className="py-1.5 px-6 carousel-item bg-white rounded-box desktop:rounded-none"
           onClick={changeCategory}
         >
-          <button className="flex flex-col items-center focus:stroke-orange-600 focus:text-orange-600 hover:text-orange-600 hover:stroke-orange-600">
+          <button className="flex flex-col items-center fill-[#86868B]  focus:text-orange-600 focus:fill-orange-600 hover:text-orange-600  hover:fill-orange-600">
             <Sauce />
             <span>Соусы</span>
           </button>

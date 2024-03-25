@@ -11,7 +11,7 @@ type Props = {
 };
 const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
   return (
-    <div className="bg-white rounded-b-3xl py-2 px-2 min-w-[288px] h-[288px] tablet:flex tablet:min-w-[360px] tablet:h-[360px] tablet:order-first tablet:py-8 tablet:px-8 tablet:rounded-none tablet:rounded-l-3xl desktop:w-[696px] desktop:h-[686px] desktop:py-12 desktop:px-12">
+    <div className="bg-white rounded-b-3xl py-2 px-2 min-w-[288px] h-[288px] tablet:flex tablet:min-w-[360px] tablet:h-[360px] tablet:order-first tablet:py-8 tablet:px-8 tablet:rounded-none tablet:rounded-l-3xl desktop:w-[696px] desktop:h-[500px] desktop:py-12 desktop:px-12">
       {images.map((elem, idx) => (
         <div
           className={`${
@@ -37,7 +37,7 @@ const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
             }}
             className="w-full"
           >
-            <h1 className="font-inter leading-tight text-[32px] font-bold mb-4 h-[160px] tablet:h-[180px] tablet:text-[36px] desktop:h-[480px] desktop:text-[64px]">
+            <h1 className="font-inter leading-tight text-[32px] font-bold mb-4 h-[160px] tablet:h-[180px] tablet:text-[36px] desktop:h-[320px] desktop:text-[64px]">
               {elem.title}
             </h1>
             <p className="text-base font-normal text-[#686870]">{elem.desc}</p>
@@ -48,13 +48,13 @@ const Description = ({ clickNext, clickPrev, activeImgIndex }: Props) => {
           <div className="relative">
             <div
               onClick={clickPrev}
-              className="absolute cursor-pointer top-[-550px] left-[200px] tablet:top-[-200px] tablet:left-[330px] desktop:top-[-350px] desktop:left-[680px]"
+              className="absolute cursor-pointer top-[-550px] left-[200px] tablet:top-[-200px] tablet:left-[330px] desktop:top-[-260px] desktop:left-[600px]"
             >
               <GrPrevious className="stroke-orange-600" />
             </div>
             <div
               onClick={clickNext}
-              className="absolute cursor-pointer top-[-550px] left-[250px] tablet:top-[-200px] tablet:left-[660px] desktop:top-[-350px] desktop:left-[1300px]"
+              className="absolute cursor-pointer top-[-550px] left-[250px] tablet:top-[-200px] tablet:left-[670px] desktop:top-[-260px] desktop:left-[1100px]"
             >
               <GrNext className="stroke-orange-600" />
             </div>

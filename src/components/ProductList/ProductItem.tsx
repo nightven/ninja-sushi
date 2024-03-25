@@ -25,7 +25,7 @@ const ProductItem: FC<ProductItemProps> = ({ products }) => {
   } = products;
 
   return (
-    <div className="relative card card-side items-start bg-base-100 shadow-xl p-3 min-w-[288px] w-full mx-auto tablet:h-[200px] desktop:flex-col desktop:h-[500px]">
+    <div className="relative card card-side items-start bg-base-100 shadow-xl p-3 min-w-[288px] w-full mx-auto tablet:h-[170px] desktop:flex-col desktop:h-[450px] desktop:p-6">
       <Image
         src={image}
         alt={title}
@@ -40,9 +40,11 @@ const ProductItem: FC<ProductItemProps> = ({ products }) => {
             Вес: {weight} г
           </p>
           <ul className="flex justify-start content-start gap-1 flex-wrap text-xs no-underline text-[#686870] desktop:text-base">
-            {ingredients?.map((ingredient, idx) => (
-              <li key={idx}>{ingredient.title.toLowerCase().slice(0, 6)},</li>
-            ))}
+            {ingredients
+              ?.slice(0, 5)
+              .map((ingredient, idx) => (
+                <li key={idx}>{ingredient.title.toLowerCase().slice(0, 6)},</li>
+              ))}
           </ul>
         </div>
         <div className="card-actions flex-nowrap justify-between items-center">
@@ -56,14 +58,14 @@ const ProductItem: FC<ProductItemProps> = ({ products }) => {
         </div>
       </div>
 
-      <div className="absolute top-[-15px] left-[-10px] flex gap-1">
+      <div className="absolute top-[-15px] left-[-10px] flex gap-1 desktop:top-[15px] desktop:left-[15px]">
         {hit && (
-          <span className="bg-[#FBDCD5] rounded-md text-orange-600 px-2 py-0.5">
+          <span className="bg-[#FBDCD5] rounded-md text-orange-600 text-sm font-medium px-2 py-0.5">
             Hit
           </span>
         )}
         {products.new && (
-          <span className="bg-[#CCF5D5] rounded-md text-orange-600 px-2 py-0.5">
+          <span className="bg-[#CCF5D5] rounded-md text-[#00CC2D] text-sm font-medium px-2 py-0.5">
             New
           </span>
         )}

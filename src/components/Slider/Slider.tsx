@@ -1,23 +1,36 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { images } from '../../../utils/constants';
 import Description from '../Description/Description';
+import { INews } from '../News/NewsList';
+import { getNews } from '@/lib/routes/news';
 
 const Slider = () => {
   const [activeImage, setActiveImage] = useState(0);
 
+  const [news, setNews] = useState<INews[]>([]);
+
   const clickNext = () => {
-    activeImage === images.length - 1
+    activeImage === news.length - 1
       ? setActiveImage(0)
       : setActiveImage(activeImage + 1);
   };
 
-  const clickPrev = () => {
-    activeImage === 0
-      ? setActiveImage(images.length - 1)
-      : setActiveImage(activeImage - 1);
-  };
+  // const clickPrev = () => {
+  //   activeImage === 0
+  //     ? setActiveImage(news.length - 1)
+  //     : setActiveImage(activeImage - 1);
+  // };
+
+  useEffect(() => {
+    const getAllNews = async () => {
+      try {
+        const allNews = await getNews();
+        setNews(allNews);
+      } catch (error) {}
+    };
+    getAllNews();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,9 +42,9 @@ const Slider = () => {
   }, [activeImage]);
 
   return (
-    <div className=" container relative w-[288px] mx-auto mt-4 transition-transform ease-in-out duration-500 tablet:flex tablet:w-[760px] desktop:w-[1440px]">
+    <div className=" container  min-w-[288px] mx-auto transition-transform ease-in-out duration-500  tablet:min-w-[720px] desktop:flex desktop:w-[1260px] desktop:h-[360px] desktop:px-0">
       <div className="flex flex-row">
-        {images.map((pic, idx) => (
+        {news.map((pic, idx) => (
           <div
             className={`${
               idx === activeImage
@@ -41,29 +54,34 @@ const Slider = () => {
             key={idx}
           >
             <Image
-              src={pic.src}
-              alt=""
-              className="w-[288px] h-[288px] object-cover rounded-3xl tablet:w-[360px] tablet:h-[360px] tablet:rounded-none tablet:rounded-r-3xl desktop:w-[696px] desktop:h-[686px] "
+              src={pic.poster}
+              width={288}
+              height={288}
+              layout="responsive"
+              alt={pic.title}
+              className=" relative min-w-[288px] h-[288px] object-cover rounded-t-3xl tablet:min-w-[720px] tablet:h-[360px] desktop:w-[730px] desktop:max-h-[360px] desktop:rounded-none desktop:rounded-r-3xl"
             />
           </div>
         ))}
       </div>
+
       <Description
         activeImgIndex={activeImage}
-        clickNext={clickNext}
-        clickPrev={clickPrev}
+        // clickNext={clickNext}
+        // clickPrev={clickPrev}
+        news={news}
       />
 
-      <div className="absolute top-[260px] left-[50px] tablet:top-[330px] tablet:left-[400px] desktop:top-[650px] desktop:left-[750px]">
+      {/* <div className="absolute top-[290px] left-[-30%] translate-x-2/4 tablet:top-[330px] tablet:left-[400px] desktop:top-[470px] desktop:left-[650px]">
         <div className="flex items-baseline justify-center gap-2">
-          {images.map((_, i) => (
+          {news.map((_, i) => (
             <div
               key={i}
               className={`transition-all w-3 h-3 rounded-full ${activeImage === i ? 'bg-orange-600' : 'bg-bgGray'}`}
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

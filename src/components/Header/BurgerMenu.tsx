@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { NAV_LIST } from '@/constans/navigations';
+import { usePathname } from 'next/navigation';
 
-const BurgerMenu: FC<{ pathname: string }> = ({ pathname }) => {
+const BurgerMenu: FC = () => {
+  const pathname = usePathname();
   return (
     <div className="absolute p-3 top-[58px] tablet:top-[76px] right-[16px] tablet:right-[24px] rounded-xl bg-mainBgWhite z-10">
       <ul className="flex flex-col items-center desktop:hidden gap-5 ">

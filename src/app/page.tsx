@@ -1,10 +1,11 @@
 'use client';
 import Category from '@/components/Category/Category';
-import ClientSideProduct from '@/components/Products/ClientSideProduct';
-import Products from '@/components/Products/Products';
+import ProductList from '@/components/ProductList/ProductList';
 import Slider from '@/components/Slider/Slider';
+import { getProducts } from '@/lib/routes/products';
+import { Products } from '@/types/productTypes';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [category, setCategory] = useState('');
@@ -12,18 +13,26 @@ export default function Home() {
     setCategory(category);
   };
 
+  const [products, setProducts] = useState<Products[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const allProducts = await getProducts();
+      setProducts(allProducts);
+    };
+    fetchData();
+  }, []);
+
   return (
     <main>
-      <section className="bg-[#F5F5F7]">
+      <section className="bg-[#F5F5F7] pt-1.5 ">
         <Category updateCategory={updateCategory} />
       </section>
-      <section className="bg-[#F5F5F7]">
+      <section className="bg-[#F5F5F7] pt-2">
         <Slider />
       </section>
-      <section className="bg-[#F5F5F7]">
-        <ClientSideProduct>
-          <Products />
-        </ClientSideProduct>
+      <section className="bg-[#F5F5F7] pt-12">
+        <ProductList products={products} />
       </section>
     </main>
   );

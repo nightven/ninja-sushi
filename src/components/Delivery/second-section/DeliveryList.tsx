@@ -11,25 +11,57 @@ export default function DeliveryList({}: DeliveryListProps) {
       array: [
         { text: 'На сайті', icon: '/icons/site.svg' },
         { text: 'В мобільному застосунку', icon: '/icons/mobile.svg' },
-        { text: 'По телефону', icon: '/icons/phone.svg' },
+        {
+          text: 'По телефону',
+          icon: '/icons/phone.svg',
+          numbers: [
+            '+38 (099) 0077-313',
+            '+38 (096) 0077-313',
+            '+38 (073) 0777-313',
+          ],
+        },
       ],
     },
     {
       title: 'Оплата',
       text: 'Переконайтеся, що вартість вашого замовлення дорівнює або перевищує 400 гривень',
       array: [
-        { text: "Готівкою кур'єру", icon: '/icons/camera.svg' },
-        { text: 'Оплата карткою', icon: '/icons/card.svg' },
-        { text: 'Криптовалютою', icon: '/icons/crypto.svg' },
+        {
+          text: "Готівкою кур'єру",
+          icon: '/icons/camera.svg',
+          subtitle: 'У наших ніндзя завжди є решта',
+        },
+        {
+          text: 'Оплата карткою',
+          icon: '/icons/card.svg',
+          subtitle: 'Оплата карткою',
+        },
+        {
+          text: 'Криптовалютою',
+          icon: '/icons/crypto.svg',
+          subtitle: 'Оплачуйте ваші замовлення за допомогою криптовалюти',
+        },
       ],
     },
     {
       title: 'Як отримати замовлення?',
       text: 'Середній час доставки становить 90 хвилин',
       array: [
-        { text: 'Доставка курьером', icon: '/icons/delivery.svg' },
-        { text: 'Самовывоз', icon: '/icons/pickup.svg' },
-        { text: 'Криптовалютою', icon: '/icons/crypto.svg' },
+        {
+          text: 'Доставка курьером',
+          icon: '/icons/delivery.svg',
+          subtitle: "Наші кур'єри не змусять чекати",
+        },
+        {
+          text: 'Самовывоз',
+          icon: '/icons/pickup.svg',
+          subtitle: 'Маємо 33 ресторани по всій Україні',
+        },
+        {
+          text: 'Криптовалютою',
+          icon: '/icons/crypto.svg',
+          subtitle: 'Оплачуйте ваші замовлення за допомогою криптовалюти',
+        },
       ],
     },
     {
@@ -39,9 +71,18 @@ export default function DeliveryList({}: DeliveryListProps) {
         {
           text: 'Передзамовлення на вказаний час',
           icon: '/icons/camera.svg',
+          subtitle: 'Замов заздалегідь, щоб не забути',
         },
-        { text: 'Безлактозні страви', icon: '/icons/lactose.svg' },
-        { text: 'Вегетаріанські роли', icon: '/icons/camera.svg' },
+        {
+          text: 'Безлактозні страви',
+          icon: '/icons/lactose.svg',
+          subtitle: 'Для тих хто не переносить лактозу',
+        },
+        {
+          text: 'Вегетаріанські роли',
+          icon: '/icons/camera.svg',
+          subtitle: 'Дбаємо про вподобання кожного клієнта',
+        },
       ],
     },
   ];

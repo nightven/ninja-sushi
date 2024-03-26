@@ -1,11 +1,15 @@
 import React from 'react';
 import DeliveryBlockItem from './DeliveryBlockItem';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 interface DeliveryBlocksProps {
   title: string;
   text: string;
-  iconArray: { text: string; icon: string }[];
+  iconArray: {
+    text: string;
+    icon: string;
+    subtitle?: string;
+    numbers?: string[];
+  }[];
 }
 
 export default function DeliveryBlocks({

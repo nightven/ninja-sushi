@@ -1,4 +1,5 @@
 import DeliveryContainer from '@/components/Delivery/DeliveryContainer';
+import About from '@/components/Delivery/about-section/About';
 import Condition from '@/components/Delivery/condition-section/Condition';
 import ZonesList from '@/components/Delivery/first-section/ZonesList';
 import DeliveryList from '@/components/Delivery/second-section/DeliveryList';
@@ -17,8 +18,11 @@ export default function Delivery({}: DeliveryProps) {
         <ZonesList />
       </DeliveryContainer>
       <section className="container">map</section>
-      <DeliveryContainer className="container my-32">
+      <DeliveryContainer className="container py-32">
         <DeliveryList />
+      </DeliveryContainer>
+      <DeliveryContainer className="desktop:block hidden py-32 bg-white">
+        <About />
       </DeliveryContainer>
     </main>
   );

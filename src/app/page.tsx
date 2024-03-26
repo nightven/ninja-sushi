@@ -1,6 +1,5 @@
 'use client';
 import Category from '@/components/Category/Category';
-import ClientSideProduct from '@/components/ProductList/ClientSideProduct';
 import ProductList from '@/components/ProductList/ProductList';
 import Slider from '@/components/Slider/Slider';
 import { getProducts } from '@/lib/routes/products';

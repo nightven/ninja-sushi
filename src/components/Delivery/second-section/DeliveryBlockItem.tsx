@@ -17,7 +17,7 @@ export default function DeliveryBlockItem({ array }: DeliveryBlockItemProps) {
       {array.map(item => (
         <li
           key={item.text}
-          className="flex desktop:flex-col desktop:gap-3 gap-6 items-center desktop:justify-center py-4 desktop:py-0 desktop:min-h-80 desktop:px-6 px-5 bg-white rounded-xl w-80"
+          className="flex desktop:flex-col desktop:gap-3 gap-6 items-center desktop:justify-center py-4 desktop:py-0 desktop:min-h-80 desktop:px-6 px-5 bg-white rounded-xl w-full"
         >
           <Image src={item.icon} alt="delivery icon" width={54} height={54} />
           <div className="flex flex-col justify-center">

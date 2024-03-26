@@ -26,9 +26,11 @@ export default function Delivery({}: DeliveryProps) {
       <DeliveryContainer className="container desktop:py-32 py-6">
         <DeliveryList />
       </DeliveryContainer>
-      <DeliveryContainer className="container desktop:block hidden py-32">
-        <About />
-      </DeliveryContainer>
+      <section className="bg-white">
+        <DeliveryContainer className="container desktop:block hidden py-32 bg-white">
+          <About />
+        </DeliveryContainer>
+      </section>
     </main>
   );
 }

@@ -3,6 +3,7 @@ import About from '@/components/Delivery/about-section/About';
 import Condition from '@/components/Delivery/condition-section/Condition';
 import ZonesList from '@/components/Delivery/first-section/ZonesList';
 import DeliveryList from '@/components/Delivery/second-section/DeliveryList';
+import clsx from 'clsx';
 import React from 'react';
 
 interface DeliveryProps {}
@@ -17,11 +18,15 @@ export default function Delivery({}: DeliveryProps) {
         <Condition />
         <ZonesList />
       </DeliveryContainer>
-      <section className="container">map</section>
-      <DeliveryContainer className="container py-32">
+      <section
+        className={clsx(
+          "desktop:bg-[url('/googledesk.png')] bg-[url('/googlemob.png')] bg-no-repeat desktop:h-[672px] h-[292px] bg-cover bg-center"
+        )}
+      />
+      <DeliveryContainer className="container desktop:py-32 py-6">
         <DeliveryList />
       </DeliveryContainer>
-      <DeliveryContainer className="desktop:block hidden py-32 bg-white">
+      <DeliveryContainer className="container desktop:block hidden py-32">
         <About />
       </DeliveryContainer>
     </main>

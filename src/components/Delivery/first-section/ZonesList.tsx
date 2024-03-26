@@ -10,7 +10,7 @@ export default function ZonesList({}: ZonesListProps) {
     { text: 'Доставку не робимо', color: Zone.Red },
   ];
   return (
-    <ul className="flex flex-col desktop:flex-row desktop:gap-6 gap-2">
+    <ul className="flex flex-col desktop:flex-row desktop:gap-6 gap-2 pb-4  ">
       {zones.map(zone => (
         <Zones title={zone.text} color={zone.color} key={zone.text} />
       ))}

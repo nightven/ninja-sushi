@@ -1,18 +1,15 @@
 import React from 'react';
-import { images } from '../../../utils/constants';
-import { GrNext } from 'react-icons/gr';
-import { GrPrevious } from 'react-icons/gr';
 import { motion } from 'framer-motion';
 import { INews } from '../News/NewsList';
 import Link from 'next/link';
 
 type Props = {
-  clickNext: () => void;
-  clickPrev: () => void;
+  // clickNext: () => void;
+  // clickPrev: () => void;
   activeImgIndex: number;
   news: INews[];
 };
-const Description = ({ clickNext, clickPrev, activeImgIndex, news }: Props) => {
+const Description = ({ activeImgIndex, news }: Props) => {
   return (
     <div className="bg-white rounded-b-3xl py-2 px-2 min-w-[288px] h-[200px] tablet:min-w-[360px] tablet:h-[250px]  tablet:py-4 tablet:px-4 desktop:flex desktop:order-first desktop:w-[530px] desktop:h-[360px] desktop:rounded-none desktop:rounded-l-3xl">
       {news.map((elem, idx) => (

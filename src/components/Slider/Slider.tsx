@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { images } from '../../../utils/constants';
 import Description from '../Description/Description';
 import { INews } from '../News/NewsList';
 import { getNews } from '@/lib/routes/news';
@@ -69,8 +68,8 @@ const Slider = () => {
 
       <Description
         activeImgIndex={activeImage}
-        clickNext={clickNext}
-        clickPrev={clickPrev}
+        // clickNext={clickNext}
+        // clickPrev={clickPrev}
         news={news}
       />
 

@@ -16,18 +16,17 @@ const Slider = () => {
       : setActiveImage(activeImage + 1);
   };
 
-  const clickPrev = () => {
-    activeImage === 0
-      ? setActiveImage(news.length - 1)
-      : setActiveImage(activeImage - 1);
-  };
+  // const clickPrev = () => {
+  //   activeImage === 0
+  //     ? setActiveImage(news.length - 1)
+  //     : setActiveImage(activeImage - 1);
+  // };
 
   useEffect(() => {
     const getAllNews = async () => {
       try {
         const allNews = await getNews();
         setNews(allNews);
-        console.log(allNews);
       } catch (error) {}
     };
     getAllNews();

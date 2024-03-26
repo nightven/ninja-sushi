@@ -60,7 +60,7 @@ const Slider = () => {
               width={288}
               height={288}
               layout="responsive"
-              alt=""
+              alt={pic.title}
               className=" relative min-w-[288px] h-[288px] object-cover rounded-t-3xl tablet:min-w-[720px] tablet:h-[360px] desktop:w-[730px] desktop:max-h-[360px] desktop:rounded-none desktop:rounded-r-3xl"
             />
           </div>

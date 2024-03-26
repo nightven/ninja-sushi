@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import News from '@/components/News/News';
 import { getNews } from '@/lib/routes/news';
-import Home from '../../assets/svgs/header/bell.svg';
 
 export interface INews {
   _id: string;
@@ -26,7 +25,9 @@ const NewsList = () => {
         const [first, second, ...news] = allNews;
         setNews(news);
         setFirstsNews([first, second]);
-      } catch (error) {}
+      } catch (error) {
+        throw new Error('failed to fetch news!');
+      }
     };
     getAllNews();
   }, []);

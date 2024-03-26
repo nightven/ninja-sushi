@@ -1,8 +1,8 @@
 import React from 'react';
-import Home from '../../assets/svgs/news/home.svg';
-import Search from '../../assets/svgs/news/search.svg';
 
 import NewsList from '../../components/News/NewsList';
+import Panel from '@/components/Panel/Panel';
+import { IoSearch } from 'react-icons/io5';
 
 export interface INewsProps {
   _id: string;
@@ -17,15 +17,9 @@ export interface INewsProps {
 const NewsPage = () => {
   return (
     <div className="text-black container mt-4">
-      <div className="flex gap-4 mb-8 items-center ">
-        <button className="text-xs text-green-400 bg-white rounded-xl py-2 px-4">
-          Назад
-        </button>
-        <button className="w-[21px] h[21px]">
-          <Home className="w-[21px] h[21px]" />
-        </button>
+      <Panel>
         <p className="text-sm text-gray-400">Новини</p>
-      </div>
+      </Panel>
       <h1 className="text-5xl font-bold mb-6">Новини</h1>
       <div className="flex flex-col tablet:flex-row gap-4 justify-between text-sm tablet:text-base mb-6">
         <div className="flex  gap-2">
@@ -38,7 +32,7 @@ const NewsPage = () => {
           <button className="bg-white rounded-xl py-3 px-4">SushiKino</button>
         </div>
         <label className="relative">
-          <Search className="absolute top-3 left-4" />
+          <IoSearch className="absolute top-3 left-4  w-[24px] h-[24px] fill-gray-500" />
           <input
             type="text"
             name="search"
